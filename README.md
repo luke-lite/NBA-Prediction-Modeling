@@ -8,8 +8,12 @@
 ## Stakeholder
 
 ## Table of Contents
+* Data Breakdown
+* Modeling
+* Results
+* Next Steps
 
-## Data
+## Data Breakdown
 
 ## Modeling
 
