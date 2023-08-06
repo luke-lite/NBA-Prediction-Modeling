@@ -110,11 +110,29 @@ Each season had close to 0.35-0.40 errors per game, meaning that for every 10 ga
 After testing the four factor datasets, I also used the PCA datasets and full datasets. I included the Neural Network (NN) model with these datasets, as I thought the NN model would be able to process the extra features more effectively. A detailed breakdown of the modeling results can be found in the [Results](#Results) section, but none of the models were able to reach the target of 68%. An ensemble model was also unlikely to reach the target since the individual models were all performing very similarly, so I chose to use an alternate method for the final model, an Elo rating system.
 
 ### Elo Rating System
-A detailed breakdown of the mathmetics and code for the Elo rating system can be found in the main jupyter [notebook](#) and in a guide I wrote titled [How to create an Elo Rating System](#). The Elo system I created was based on the [FiveThirtyEight
+A detailed breakdown of the mathmetics and code for the Elo rating system can be found  in a guide I wrote titled [How to create an Elo Rating System](#). The Elo system I created was based on the [FiveThirtyEight Elo system](https://fivethirtyeight.com/features/how-we-calculate-nba-elo-ratings/) by Nate Silver. The article provides some great insight into the processby which they created their model, and I highly suggest reading it.
 
-The main benefit of an Elo system is its simplicity. All that is required is the team names, their current Elo rating, and the outcome of each competition, and the system can make a prediction on who will win. For each game, the system predicts that the team with the higher current elo will win, and both teams Elo ratings are adjusted up or down depending on if they won or lost, respectively. Surprisingly, the Elo rating system
-
+The main benefit of an Elo system is its simplicity. All that is required is the team names, their current Elo rating, and the outcome of each competition, and the system can make a prediction on who will win. For each game, the system predicts that the team with the higher current elo will win, and both teams Elo ratings are adjusted up or down depending on if they won or lost, respectively. Surprisingly, the Elo rating system outperformed every individual model with an accuracy of 64%, despite not utilizing any boxscore data. Given the relatively low computational costs and lack of a need to train complex machine learning models, it was clearly the best model for the task at hand.
 
 ## Results
+This is full list of models and their performance in terms of overall accuracy:
+
+![]()
+
+There were incremental improvements moving from 10-game averages to 20-game averages, but as mentioned earlier, the machine learning models all behaved simiarly, with a tendency to favor the home team (false-positives) and similar error distribution thoughout each season. Because of this, an ensemble model is unlikely to see large improvements in accuracy. Ultimately, my recommendation is for Stat-Ball to use the Elo rating system. It was the most accurate model, while also requiring the least amount of data and computation.
 
 ## Next Steps
+Overall, the project was a success. I was able to collect the data, create and compare models and datasets, and select a model suitable for the stakeholder. The results did not meet the original goal of 68% accuracy, but there are several promising leads for future iterations of this project:
+
+* more extensive data collection
+* player aggregated data
+* additional model adjustments
+
+### Data Collection
+It is likely that all models would benefit from additional data collection. Machine learning datasets typcially handle extremely large datasets well, so the additional information may lead to improvements in performance, particularly for the more complex models like the Neural Network. I plan to add an additional decade of boxscore data in the future. There are also opportunities for feature engineering that may better capture the information in the raw dataset, such as advanced statistics like PIE (Player Impact Estimate) and BPM (Box Plus/Minus). 
+
+### Player Aggregated Data
+As discussed before, player aggregated data has several benefits over team aggregated data. In particular, it has the ability to respond more quickly to roster changes, which could lead to significant improvements in accuracy at the beginning of each season. Player aggregation also allows for the possibility of creating predictive player metrics that can predict how a player will perform based on past performance and current teammates. For an example of how this would work in practice, see [How Our RAPTOR Metric Works]([How Our RAPTOR Metric Works](https://fivethirtyeight.com/features/how-our-raptor-metric-works/). FiveThrityEight's RAPTOR metric utilizes player tracking data in addition to boxscore data and is highly sophisticated, but it is possible to create a more simplified version based on the data I have available.
+
+### Additional Model Adjustments
+Assuming that additional data will help improve the machine learning models, there is a good chance that a custom ensemble method that also incorporates the Elo rating system will outperform the Elo system alone. I can also adjust the current Elo system to increase its complexity. The only adjustments it currently makes are home-court advantage and margin of victory. Other possible adjustments include back-to-back games, road trips, and even the elevation at which games are played. These additional features could also further improve the individual models.
