@@ -1,7 +1,7 @@
 # NBA-Prediction-Modeling
 ## Luke DiPerna
 ### August, 2023
-!
+![basket_splash_image](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/7dd0df0e39e479758dc5b26affdbdd2dffc058ff/basket_splash_image.jpg)
 
 ## Project Goal
 The purpose of this project is to create a machine learning model that can accurately predict the outcome of NBA games using boxscore stats from the past 10 seasons. In order to accomplish this, I:
@@ -11,16 +11,16 @@ The purpose of this project is to create a machine learning model that can accur
 * evaluated and iterated upon the models to improve accuracy
 
 ## Stakeholder
-The stakeholder for this project is Stat-Ball, a sports news and entertainment website. The site plans to have fantasy drafts and competitions for predicting NBA game winners, so they want to build an in-house model they can use as a benchmark for users to compete against. The exact limitations and specifications are discussed in the [Data Breakdown](#Data-Breakdown) section.
+The stakeholder for this project is Stat-Ball, a sports news and entertainment website. The site plans to have fantasy drafts and competitions for predicting NBA game winners, so they want to build an in-house model they can use as a benchmark for users to compete against. The exact limitations and specifications are discussed in the [Data Overview](#Data-Overview) section.
 
 ## Table of Contents
-* Data Breakdown
-* Modeling
-* Results
-* Next Steps
+* [Data Overview](#Data-Overview)
+* [Modeling](#Modeling)
+* [Results](#Results)
+* [Next Steps](#Next-Steps)
 
-## Data Breakdown
-The final versions of the dataset I will be using include team stat aggregation for the past 10, 20, and 30 games. To see the code used to perform the data aggregation, see this [jupyter notebook](#).
+## Data Overview
+The final versions of the dataset I used include team stat aggregation for the past 10, 20, and 30 games. To see the code used to perform the data aggregation, see this [jupyter notebook](#).
 
 ### Data Collection
 The first task was to determine how much and what kind data would be needed. Given the timeline for the project, it was decided that I would collect all boxscore data from every NBA regular season game over the past 10 years. Future iterations could include playoff games and data from older seasons, but teams have been shown to perform differently in the playoffs, so it would require additional changes to the model to account for this. Additionally, modern machine learning models often utilize player tracking data as well, but this data is not as publicly available and would require a significant investment.
