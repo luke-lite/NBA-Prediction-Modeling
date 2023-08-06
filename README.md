@@ -1,13 +1,13 @@
-# NBA-Prediction-Modeling
+# NBA Prediction Modeling
 ## Luke DiPerna
 ### August, 2023
 ![basket_splash_image](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/7dd0df0e39e479758dc5b26affdbdd2dffc058ff/basket_splash_image.jpg)
 
 ## Project Goal
-The purpose of this project is to create a machine learning model that can accurately predict the outcome of NBA games using boxscore stats from the past 10 seasons. In order to accomplish this, I:
+The purpose of this project is to create a machine learning model that can accurately predict the outcome of NBA games using boxscore statistics from the past 10 seasons. In order to accomplish this, I:
 
-* built a webscraper to gather the raw ddata
-* processed the data to prepare it for modeling
+* built a webscraper to gather the raw data
+* aggregated and processed the data to prepare it for modeling
 * evaluated and iterated upon the models to improve accuracy
 
 ## Stakeholder
@@ -20,7 +20,7 @@ The stakeholder for this project is Stat-Ball, a sports news and entertainment w
 * [Next Steps](#Next-Steps)
 
 ## Data Overview
-The final versions of the dataset I used include team stat aggregation for the past 10, 20, and 30 games. To see the code used to perform the data aggregation, see this [jupyter notebook](#).
+The final versions of the datasets I used include team stat aggregations of the past 10, 20, and 30 games. To see the code used to perform the data aggregation, see the [data aggregation notebook](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/236dd52e4d463f30bca58aa6615d12aeab110ea9/data/data-aggregation.ipynb).
 
 ### Data Collection
 The first task was to determine how much and what kind data would be needed. Given the timeline for the project, it was decided that I would collect all boxscore data from every NBA regular season game over the past 10 years. Future iterations could include playoff games and data from older seasons, but teams have been shown to perform differently in the playoffs, so it would require additional changes to the model to account for this. Additionally, modern machine learning models often utilize player tracking data as well, but this data is not as publicly available and would require a significant investment.
