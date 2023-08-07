@@ -115,7 +115,7 @@ A detailed breakdown of the mathmetics and code for the Elo rating system can be
 The main benefit of an Elo system is its simplicity. All that is required is the team names, their current Elo rating, and the outcome of each competition, and the system can make a prediction on who will win. For each game, the system predicts that the team with the higher current elo will win, and both teams Elo ratings are adjusted up or down depending on if they won or lost, respectively. Surprisingly, the Elo rating system outperformed every individual model with an accuracy of 65.3%, despite not utilizing any boxscore data. Given the relatively low computational costs and lack of a need to train complex machine learning models, it was clearly the best model for the task at hand.
 
 ## Results
-This is full list of models and their performance in terms of overall accuracy:
+This is a list of the top 10 models and their performance in terms of overall accuracy:
 
 ![]()
 
