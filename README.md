@@ -1,6 +1,6 @@
 # NBA Prediction Modeling
 ## Luke DiPerna
-### August, 2023
+### August 2023
 ![basket_splash_image](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/7dd0df0e39e479758dc5b26affdbdd2dffc058ff/basket_splash_image.jpg)
 
 ## Project Goal
