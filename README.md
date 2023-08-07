@@ -74,16 +74,16 @@ I used a number of different modeling techniques to evaluate the relative effect
 * Gaussian Naive-Bayes (GNB)
 * Support Vector Classifier (SVC)
 * Neural Network (NN)
-* Elo RatingSystem
+* Elo Rating System
 
-These models provide a mix of weak- and strong-learning binary classifiers. Some, like the logistic regression model, is fairly fast and efficient. But others, like the RF model, are significantly more computationally expensive and time-consuming.
+These models provide a mix of weak- and strong-learning binary classifiers. Some, like the logistic regression model, are fairly fast and efficient. But others, like the RF model, are significantly more computationally expensive and time-consuming.
 
 ### Baseline Model
 
 The "baseline" model always selects the home team as the winner. There is a notable home-court advantage in the NBA, with the home team typically winning around 60% of their games in a given season. For my dataset, the exact value is 57.2%.
 
-### Model Target
-Traditionally, the NBA has an upset rate of between 28-32%, meaning that the "better" team wins 68-72% of the time. Because of this, it is very challenging to create a model with an accuracy higher than 68-72%. Given the limitations of the data I am using, I hope to achieve an accuracy that approaches the 68% threshold.
+### Target Metric
+Traditionally, the NBA has an upset rate of between 28-32%, meaning that the "better" team wins 68-72% of the time. Because of this, it is very challenging to create a model with an accuracy higher than this range. Given the limitations of the data I am using, I hope to achieve an accuracy that approaches the 68% threshold.
 
 ### Modeling Process
 I began by testing the four factor data using the past 10, 20, and 30 game averages. The 10-game aggregation data underperformed, while the 20 and 30 game aggregation were similar in terms of average accuracy across all models. Ultimately, I decided to focus on the 20-game aggregation when testing the full dataset with all boxscore statistics.
@@ -95,27 +95,27 @@ I also evaluated the model error in more detail. Since I used team aggregation d
 * free-agency
 * draft
 
-My hypothesis was that the models will have less error in the second half of each season because of fewer roster changes. In the NBA, once the trade deadline has passed, rosters mostly remain the same outside of injuries and the occasional signing. At the start of a season, however, there will be a lot of uncertainty since the off-season is when we see the vast majority of roster changes through the other methods listed above. And since my team-aggregated data does not reset between seasons, the models are using data that has been carried over from the end of the previous season even though the rosters may be completely different. I broke down the error stats by taking the average across all seasons, and splitting the error counts into season quarters. This was performed using the four factor 10-game aggregated data:
+My hypothesis was that the models will have less error in the second half of each season because of fewer roster changes. In the NBA, once the trade deadline has passed, rosters mostly remain the same outside of injuries and the occasional signing. At the start of a season, however, there will be a lot of uncertainty since the off-season is when we see the vast majority of roster changes. And since the team-aggregated data does not reset between seasons, the models are using data that has been carried over from the end of the previous season even though the rosters may be completely different. I broke down the error stats by taking the average error across all seasons, and splitting the error counts into season quarters. This was performed using the four factor 10-game aggregated data:
 
 ![model_error_per_season_quarter](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/f2bdb3fc70f305814df41406ae729a5924e53dde/graphs/model_error_per_season_quarter.png)
 
 It is clear that the models are behaving very similarly, not just in terms of overall accuracy, but also the error distribution over the course of a season. My hypothesis that the second half of each season would be less error-prone seems possible, but the cross-model similarity also suggests there is not enough information in the data to differentiate the models.
 
-I also examined the average model error per season to see if there are any outliers. Since some seasons had fewer overall games than others, I adjusted the results to represent the average error per game for each season:
+I also examined the average model error per season to see if there were any outliers. Since some seasons had fewer overall games than others, I adjusted the results to represent the average error per game for each season:
 
 ![average_error_per_game](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/f2bdb3fc70f305814df41406ae729a5924e53dde/graphs/average_error_per_game.png)
 
-Each season had close to 0.35-0.40 errors per game, meaning that for every 10 games in a given season, the models averaged about 3.5 to 4 errors. This matches the average model accuracy of around 60%.
+Each season had close to 0.35-0.40 errors per game, meaning that for every 10 games in a given season, the models averaged about 3.5 to 4 errors. This matched the average model accuracy of around 60%.
 
-After testing the four factor datasets, I also used the PCA datasets and full datasets. I included the Neural Network (NN) model with these datasets, as I thought the NN model would be able to process the extra features more effectively. A detailed breakdown of the modeling results can be found in the [Results](#Results) section, but none of the models were able to reach the target of 68%. An ensemble model was also unlikely to reach the target since the individual models were all performing very similarly, so I chose to use an alternate method for the final model, an Elo rating system.
+After testing the four factor datasets, which averaged around 61-62% accuracy, I also used the PCA datasets and full datasets. I included the Neural Network (NN) model with these datasets, as I thought the NN model would be able to process the extra features more effectively. A detailed breakdown of the modeling results can be found in the [Results](#Results) section, but none of the models were able to reach the target of 68%. An ensemble model was also unlikely to reach the target since the individual models were all performing very similarly, so I chose to use an alternate method for the final model, an Elo rating system.
 
 ### Elo Rating System
-A detailed breakdown of the mathmetics and code for the Elo rating system can be found in a guide I wrote titled [How to create an Elo Rating System](#). The Elo system I created was based on the [FiveThirtyEight Elo system](https://fivethirtyeight.com/features/how-we-calculate-nba-elo-ratings/) by Nate Silver. This article provides some great insight into the process by which they created their model, and I highly suggest reading it.
+A detailed breakdown of the mathematics and code for the Elo rating system can be found in a guide I wrote titled [How to create an NBA Elo Rating System](#). The Elo system I created was based on the [FiveThirtyEight Elo system](https://fivethirtyeight.com/features/how-we-calculate-nba-elo-ratings/) developed by Nate Silver. The article provides some great insight into the process by which they created their model, and I highly suggest reading it.
 
 The main benefit of an Elo system is its simplicity. All that is required is the team names, their current Elo rating, and the outcome of each competition, and the system can make a prediction on who will win. For each game, the system predicts that the team with the higher current elo will win, and both teams Elo ratings are adjusted up or down depending on if they won or lost, respectively. Surprisingly, the Elo rating system outperformed every individual model with an accuracy of 65.3%, despite not utilizing any boxscore data. Given the relatively low computational costs and lack of a need to train complex machine learning models, it was clearly the best model for the task at hand.
 
 ## Results
-This is a list of the top 10 models and their performance in terms of overall accuracy:
+This is a list of the top 10 models and the relative performance of the top 5 in terms of overall accuracy:
 
 ![]()
 
