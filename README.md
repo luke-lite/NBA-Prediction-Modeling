@@ -33,7 +33,7 @@ The resulting dataset was put in a SQLite database that contains:
 * 341,669 observations and 46 columns of data across 11,979 NBA games.
 
 ### Data Aggregation
-The next step was to decide how best to aggregate the data from individual games. Typically, averages of each statistic are calculated by using the stats from the previous *n* number of games. There were 3 main considerations:
+The next step was to decide how best to aggregate the individual game data. Typically, averages of each statistic are calculated by using the stats from the previous *n* number of games. There were 3 main considerations:
 
 * How "responsive" should the data be?
 * Is team data or player data more effective for predicting outcomes?
