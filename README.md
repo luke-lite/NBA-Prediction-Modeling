@@ -11,13 +11,13 @@ The purpose of this project is to create a machine learning model that can accur
 * evaluated and iterated upon the models to improve accuracy
 
 ## Stakeholder
-The stakeholder for this project is Stat-Ball, a sports news and entertainment website. The site plans to have fantasy drafts and competitions for predicting NBA game winners, so they want to build an in-house model they can use as a benchmark for users to compete against. The exact limitations and specifications are discussed in the [Data Overview](#Data-Overview) section.
+The stakeholder for this project is Stat-Ball, a sports news and entertainment website. The site plans to have fantasy drafts and competitions for predicting NBA game winners, so they want to build an in-house model they can use as a benchmark for users to compete against. The exact limitations and specifications are discussed in the [Data Overview](#data-overview) section.
 
 ## Table of Contents
-* [Data Overview](#Data-Overview)
-* [Modeling](#Modeling)
-* [Results](#Results)
-* [Next Steps](#Next-Steps)
+* [Data Overview](#data-overview)
+* [Modeling](#modeling)
+* [Results](#results)
+* [Next Steps](#next-steps)
 
 ## Data Overview
 The final versions of the datasets I will be using include team aggregated statistics for the past 10, 20, and 30 games. To see the code used to perform the data aggregation, see the [data-aggregation notebook](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/7dd0df0e39e479758dc5b26affdbdd2dffc058ff/data/data-aggregation.ipynb). The data has a highly normal distribution, so little pre-processing is needed.
