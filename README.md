@@ -99,7 +99,7 @@ I also evaluated the model error in more detail. Since I used team aggregation d
 
 My hypothesis was that the models will have less error in the second half of each season because of fewer roster changes. In the NBA, once the trade deadline has passed, rosters mostly remain the same outside of injuries and the occasional signing. At the start of a season, however, there will be a lot of uncertainty since the off-season is when we see the vast majority of roster changes. And since the team-aggregated data does not reset between seasons, the models are using data that has been carried over from the end of the previous season even though the rosters may be completely different. I broke down the error stats by taking the average error across all seasons, and splitting the error counts into season quarters. This was performed using the four factor 10-game aggregated data:
 
-![model_error_per_season_quarter](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/f2bdb3fc70f305814df41406ae729a5924e53dde/graphs/model_error_per_season_quarter.png)
+![model_error_per_season_quarter](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/511437a74c9e0b61e8a4201eb73c34629fd7896f/graphs/model_error_per_season_quarter.png)
 
 It is clear that the models are behaving very similarly, not just in terms of overall accuracy, but also the error distribution over the course of a season. My hypothesis that the second half of each season would be less error-prone seems possible, but the cross-model similarity also suggests there is not enough information in the data to differentiate the models.
 
