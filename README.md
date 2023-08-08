@@ -119,7 +119,7 @@ The main benefit of an Elo system is its simplicity. All that is required is the
 ## Results
 This is a list of the top 10 models and the relative performance of the top 5 in terms of overall accuracy:
 
-![]()
+![top_10_models_list](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/e03babe17a8d176b31fd711e0a8f3773363b047e/graphs/top_10_models_list.png)
 
 There were incremental improvements moving from 10-game averages to 20-game averages, but as mentioned earlier, the machine learning models all behaved simiarly, with a tendency to favor the home team (false-positives) and similar error distribution thoughout each season. Because of this, an ensemble model is unlikely to see large improvements in accuracy. Ultimately, my recommendation is for Stat-Ball to use the Elo rating system. It was the most accurate model, while also requiring the least amount of data and computation.
 
