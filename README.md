@@ -19,7 +19,7 @@ The stakeholder for this project is Stat-Ball, a sports news and entertainment w
 * [Results](#results)
 * [Next Steps](#next-steps)
 
-The notebook containing the full code for this project: [NBA-Prediction-Modeling](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/c2ee794d54425ebb60a0e02def46109a347b3215/NBA-Prediction-Modeling.ipynb)
+The notebook containing the full code for this project can be found here: [NBA-Prediction-Modeling](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/c2ee794d54425ebb60a0e02def46109a347b3215/NBA-Prediction-Modeling.ipynb)
 
 ## Data Overview
 The final versions of the datasets I will be using include team aggregated statistics for the past 10, 20, and 30 games. To see the code used to perform the data aggregation, see the [data-aggregation notebook](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/7dd0df0e39e479758dc5b26affdbdd2dffc058ff/data/data-aggregation.ipynb). The data has a highly normal distribution, so little pre-processing is needed.
