@@ -19,6 +19,8 @@ The stakeholder for this project is Stat-Ball, a sports news and entertainment w
 * [Results](#results)
 * [Next Steps](#next-steps)
 
+The notebook containing the full code for this project: [NBA-Prediction-Modeling](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/c2ee794d54425ebb60a0e02def46109a347b3215/NBA-Prediction-Modeling.ipynb)
+
 ## Data Overview
 The final versions of the datasets I will be using include team aggregated statistics for the past 10, 20, and 30 games. To see the code used to perform the data aggregation, see the [data-aggregation notebook](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/7dd0df0e39e479758dc5b26affdbdd2dffc058ff/data/data-aggregation.ipynb). The data has a highly normal distribution, so little pre-processing is needed.
 
@@ -136,3 +138,14 @@ As discussed before, player aggregated data has several benefits over team aggre
 
 ### Additional Model Adjustments
 Assuming that additional data will help improve the machine learning models, there is a good chance that a custom-built ensemble method that also incorporates the Elo rating system will outperform the Elo system alone. I can also adjust the current Elo system to increase its complexity. The only adjustments it currently makes are home-court advantage and margin of victory. Other possible adjustments include back-to-back games, road trips, and even the elevation at which games are played. These additional features could also further improve the individual machine learning models.
+
+## Repository Structure
+```
+├── data
+├── graphs
+├──.gitignore
+├── NBA-Prediction-Modeling.ipynb
+├── README.md
+├── basket_splash_image.jpg
+├── nbaenv.yml
+```
