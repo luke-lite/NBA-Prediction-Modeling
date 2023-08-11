@@ -115,7 +115,11 @@ Compared to the other models, there was a significant drop in false positives, a
 
 ![feat_imp_RF_best](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/c9da1129051d177f987ca7249075421f4535d990/graphs/feat_imp_RF_best.png)
 
-A detailed breakdown can be found in the jupyter notebook, but there are several categories of highly correlated features (for example: shooting/scoring, rebounding, and defense). Selecting the most important ones from each category could be a simple method for creating performant models, though they will likely not be as nuanced as the more feature-inclusive datasets.
+A detailed breakdown can be found in the jupyter notebook, but there are several categories of highly correlated features (for example: shooting/scoring, rebounding, and defense). Selecting the most important ones from each category could be a simple method for creating performant models, though they will likely not be as nuanced as the more feature-inclusive datasets. The following graph shows how accuracy was affected by the number of features on a logistic regression model:
+
+![log_reg_acc_by_k](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/ea7300c20959916a7999b8b910d922f4da3b226e/graphs/log_reg_acc_by_k.png)
+
+So despite the colinearity of many of the features, enough information was captured in the data to make it beneficial to include a large number of features.
 
 Ultimately, I recommend that Stat-Ball utilize the Elo Rating System as it was the most accurate and least data-intensive. Additionally, I recommend engaging users by sharing some of the insights gained from feature selection and analysis to encourage participation.
 
