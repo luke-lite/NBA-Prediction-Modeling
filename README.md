@@ -105,7 +105,7 @@ The main benefit of an Elo system is its simplicity. All that is required is the
 ## Results
 This is a list of the top 10 models and the relative performance of the top 5 in terms of overall accuracy:
 
-![top_10_models_list](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/e03babe17a8d176b31fd711e0a8f3773363b047e/graphs/top_10_models_list.png)
+![top_10_models_list](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/920af41f52d340c10110c5b8af8029d69e0041a9/graphs/top_10_models_list.png)
 
 There were incremental improvements moving from 10-game averages to 20-game averages, but as mentioned earlier, the machine learning models all behaved simiarly, with a tendency to favor the home team (false-positives) and similar error distribution thoughout each season. Performing PCA and feature selection, however, began to improve and differentiate the models. The highest performing machine-learning model was the Gaussian Naive-Bayes PCA model. The confusion matrix for it looks like this:
 
