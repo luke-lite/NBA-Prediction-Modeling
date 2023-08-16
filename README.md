@@ -6,12 +6,15 @@
 ## Project Goal
 The purpose of this project is to create a machine learning model that can accurately predict the outcome of NBA games using boxscore statistics from the past 10 seasons. In order to accomplish this, I:
 
-* built a webscraper to gather the raw data
-* aggregated and processed the data to prepare it for modeling
+* built a web-scraper from scratch to collect data on over 12,000 NBA games
+* aggregated and processed multiple datasets to prepare them for modeling
 * evaluated and iterated upon the models to improve accuracy
 
 ## Stakeholder
 The stakeholder for this project is Stat-Ball, a sports news and entertainment website. The site plans to have fantasy drafts and competitions for predicting NBA game winners, so they want to build an in-house model they can use as a benchmark for users to compete against. The exact limitations and specifications are discussed in the [Data Overview](#data-overview) section.
+
+## Project Summary
+All individual models fell short of the target accuracy of 68%. The best machine learning model was a Gaussian Naive-Bayes model that was trained on averaged team statistics from the past 20 games that I then performed Principal Component Anaylsis on to reduce dimensionality. It had an accuracy of 63.5%. I then tested an algorithmic approach by creating an Elo rating system, which was the best performing model with an accuracy of 65.3%. With access to additional data and improved data aggregation techniques, I believe it is possible to create an ensemble model that can pass the 68% threshold.
 
 ## Table of Contents
 * [Data Overview](#data-overview)
