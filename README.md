@@ -1,7 +1,7 @@
 # NBA Prediction Modeling
 ## Luke DiPerna
 ### August 2023
-![basket_splash_image](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/7dd0df0e39e479758dc5b26affdbdd2dffc058ff/basket_splash_image.jpg)
+![basket_splash_image](https://github.com/luke-lite/NBA-Prediction-Modeling/blob/bb32ed36cf7d06a4c0a9ed94a69e6f9b6906fbc8/basketball-splash-image.jpg)
 
 ## Project Goal
 The purpose of this project is to create a machine learning model that can accurately predict the outcome of NBA games using boxscore statistics from the past 10 seasons. In order to accomplish this, I:
